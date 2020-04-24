@@ -74,7 +74,73 @@
       <h1>Welcome</h1>
       <p>Welcome to Volunteer Ops, to find opportunities to give back to your
       community please create an account and login.</p>
-      <hr>
+      <p>
+      <?php if ('story'=='stort'): ?>
+pd4235@satoshi.cis.uncw.edu's password: 
+Welcome to Ubuntu 18.04.4 LTS (GNU/Linux 4.15.0-72-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Fri Apr 24 13:16:11 EDT 2020
+
+  System load:  2.08                Processes:             565
+  Usage of /:   45.3% of 217.45GB   Users logged in:       1
+  Memory usage: 8%                  IP address for ens1f0: 152.20.12.152
+  Swap usage:   0%                  IP address for ens1f1: 192.168.34.50
+
+ * Ubuntu 20.04 LTS is out, raising the bar on performance, security,
+   and optimisation for Intel, AMD, Nvidia, ARM64 and Z15 as well as
+   AWS, Azure and Google Cloud.
+
+     https://ubuntu.com/blog/ubuntu-20-04-lts-arrives
+
+
+ * Canonical Livepatch is available for installation.
+   - Reduce system reboots and improve kernel security. Activate at:
+     https://ubuntu.com/livepatch
+
+18 packages can be updated.
+0 updates are security updates.
+
+
+*** System restart required ***
+Last login: Fri Apr 24 11:49:17 2020 from 10.50.248.236
+pd4235@satoshi:~$ cd public_html
+pd4235@satoshi:~/public_html$ cd csc450Project
+pd4235@satoshi:~/public_html/csc450Project$ cd phpFiles
+pd4235@satoshi:~/public_html/csc450Project/phpFiles$ ls
+hub.php    startupPage.html  surveyPage.php
+login.php  startupPage.php   viewOps.php
+pd4235@satoshi:~/public_html/csc450Project/phpFiles$ vim startupPage.html
+pd4235@satoshi:~/public_html/csc450Project/phpFiles$ vim startupPage.php
+pd4235@satoshi:~/public_html/csc450Project/phpFiles$ vim startupPage.php
+pd4235@satoshi:~/public_html/csc450Project/phpFiles$ vim startupPage.html
+
+        <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container-fluid text-center">
+  <div class="row content">
+    <div class="col-sm-2 sidenav">
+    </div>
+    <div class="col-sm-8 text-left">
+      <h1>Welcome</h1>
+      <p>Welcome to Volunteer Ops, to find opportunities to give back to your
+      community please create an account and login.</p>
+      <p>
+      <button type="button" onclick="alert('TS')">Take Survey</button>
+      <button type="button" onclick="alert('VO')">View opportinities</button>
+      </p> <hr>
+    </div>
+    <div class="col-sm-2 sidenav">
+    </div>      <button type="button" onclick="alert('TS')">Take Survey</button>
+      <button type="button" onclick="alert('VO')">View opportinities</button>
+      </p> <hr>
     </div>
     <div class="col-sm-2 sidenav">
     </div>
