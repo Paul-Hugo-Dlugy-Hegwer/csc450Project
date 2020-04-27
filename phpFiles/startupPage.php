@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <?php
 session_start();
-echo $_SESSION['check'];
+echo $_SESSION['loginType'];
 ?>
 <html lang="en">
 <head>

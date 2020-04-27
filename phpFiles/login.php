@@ -102,7 +102,7 @@ session_start();
 	      <?PHP print "User"; ?>
               <input type="Radio" name="loginType" value="user"/>
               <?PHP print "Org"; ?>
-	      <input type="Radio" name="loginType" value "org"/>
+	      <input type="Radio" name="loginType" value="org"/>
 	      <P>
 	      <input type="submit" name="submit" value="Submit"/>
       </form>
