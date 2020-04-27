@@ -1,4 +1,25 @@
 <!DOCTYPE html>
+<?php 
+session_start();
+?>
+<?php
+	if(isset($_POST['submit'])){
+		echo "HERE";
+		if($_POST['un'] != "" && $_POST['pw']!= "")
+		{
+			echo "HERE AS WELL";
+			$count_un = strlen($_POST['un']);
+			$count_pw = strlen($_POST['pw']);
+			$_SESSION['check']=$_POST['submit'];
+			if ($count_un > '3' && $count_pw > '3'){
+				echo "HERE ASLO";
+				if(isset($_POST["submit"])){
+                                	header('Location: startupPage.php');
+                        	}  
+			}
+		}
+	}	
+ ?>
 <html lang="en">
 <head>
   <title>VolunteerOps</title>
@@ -70,7 +91,7 @@
     <div class="col-sm-8 text-left">
       <h1>Welcome</h1>
       <hr>
-      <form method="get" action="login.php">
+      <form method="POST" action="login.php">
               <h2>username: </h2>
               <input name = "un"/>
               <h3>password: </h3>
@@ -78,11 +99,6 @@
               <input type="submit" name="submit" value="Submit"/>
       </form>
       <p>
-      <?php
-              if(isset($_GET["submit"])){
-              header('Location: hub.php');
-              }
-              ?>
       </p>
     </div>
     <div class="col-sm-2 sidenav">

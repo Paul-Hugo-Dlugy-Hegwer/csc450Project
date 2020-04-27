@@ -1,4 +1,8 @@
 <!DOCTYPE html>
+<?php
+session_start();
+echo $_SESSION['check'];
+?>
 <html lang="en">
 <head>
   <title>VolunteerOps</title>
@@ -74,8 +78,8 @@
       <h1>Welcome</h1>
       <p>Welcome to Volunteer Ops, to find opportunities to give back to your
       community please create an account and login.</p>
-      <?php if ('bats' == 'COMPLETE') : ?>
-      <button type="button" onclick="alert('TS')">Take Survey</button>
+      <?php if ($_SESSION['check']  == 'Submit') : ?>
+      <button type="button" onclick="window.location.href='surveyPage.php'">Take Survey</button>
       
       <button type="button" onclick="alert('VO')">View opportinities</button>
       <?php endif ?>
