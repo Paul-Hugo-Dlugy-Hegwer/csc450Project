@@ -5,12 +5,14 @@ session_start();
 <?php
 	if(isset($_POST['submit'])){
 		echo "HERE";
+
 		if($_POST['un'] != "" && $_POST['pw']!= "")
 		{
 			echo "HERE AS WELL";
 			$count_un = strlen($_POST['un']);
 			$count_pw = strlen($_POST['pw']);
 			$_SESSION['check']=$_POST['submit'];
+			$_SESSION['loginType']=$_POST['loginType'];
 			if ($count_un > '3' && $count_pw > '3'){
 				echo "HERE ASLO";
 				if(isset($_POST["submit"])){

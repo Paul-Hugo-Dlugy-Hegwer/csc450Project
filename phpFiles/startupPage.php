@@ -78,10 +78,15 @@ echo $_SESSION['check'];
       <h1>Welcome</h1>
       <p>Welcome to Volunteer Ops, to find opportunities to give back to your
       community please create an account and login.</p>
-      <?php if ($_SESSION['check']  == 'Submit') : ?>
+      <?php if ($_SESSION['check']  == 'Submit' && $_SESSION['loginType']=='user') : ?>
       <button type="button" onclick="window.location.href='surveyPage.php'">Take Survey</button>
       
       <button type="button" onclick="alert('VO')">View opportinities</button>
+      <?php endif ?>
+      <?php if ($_SESSION['loginType']=='org') : ?>
+	<button type="button" onclick="window.location.href='postPage.php'">Post Opportunity</button>
+
+      	<button type="button" onclick="alert('VO')">View applicants</button>
       <?php endif ?>
       <hr>
     </div>
