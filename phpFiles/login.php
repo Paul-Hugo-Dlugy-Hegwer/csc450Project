@@ -95,8 +95,14 @@ session_start();
               <h2>username: </h2>
               <input name = "un"/>
               <h3>password: </h3>
-              <input name = "pw"/>
-              <input type="submit" name="submit" value="Submit"/>
+	      <input name = "pw"/>
+              <P>
+	      <?PHP print "User"; ?>
+              <input type="Radio" name="loginType" value="user"/>
+              <?PHP print "Org"; ?>
+	      <input type="Radio" name="loginType" value "org"/>
+	      <P>
+	      <input type="submit" name="submit" value="Submit"/>
       </form>
       <p>
       </p>
