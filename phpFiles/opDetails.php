@@ -2,8 +2,8 @@
 session_start();
 include 'connection.php';
 $conn = OpenCon();
-echo $_SESSION['uId'];
 $oppIDVar = (int)$_GET['oppIDVar'];
+echo $oppIDVar;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -69,10 +69,10 @@ $oppIDVar = (int)$_GET['oppIDVar'];
   <div class="col-sm-2 sidenav">
   </div>
   <div class="col-sm-8 text-left">
-    <h1>Your Matches</h1>
+    <h1>Opportunity Details</h1>
     <?php
       $u_var = (int)$_SESSION['uId'];
-      $sql = "SELECT * FROM opportunity WHERE opportunity.user_ID = '$oppIDVar';";
+      $sql = "SELECT * FROM opportunity WHERE opportunity.opp_ID = '$oppIDVar';";
       $results = mysqli_query($conn, $sql);
       echo "<table border='1'>
 	    <tr>

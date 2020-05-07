@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <?php
 session_start();
-echo $_SESSION['orgId'];
+echo $_SESSION['uId'];
 ?>
 <html lang="en">
 <head>
@@ -61,10 +61,12 @@ echo $_SESSION['orgId'];
       <ul class="nav navbar-nav">
         <li class="active"><a href="#">Home</a></li>
         <li><a href="#">About</a></li>
-        <li><a href="#">Contact</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+	<?php if($_SESSION['uId'] == '' && $_SESSION['orgId'] == '') : ?>
+	<li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+	<?php endif ?>
+	<li><a href="logout.php"> Logout</a></li>
       </ul>
     </div>
   </div>
