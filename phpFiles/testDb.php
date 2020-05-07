@@ -1,3 +1,4 @@
+<?php
 /*
  * Title: testDb.php
  * Purpose: The page responsible for testing connection to the database.
@@ -13,8 +14,6 @@
  * Justification: None
  * */
 
-
-<?php
 include 'connection.php';
 $conn = OpenCon();
 echo "Connected Succesfully";
