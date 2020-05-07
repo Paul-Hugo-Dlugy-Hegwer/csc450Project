@@ -3,7 +3,7 @@
  * Title: connection.php
  * Purpose: Establishes the connection to the satoshi server mysql database.
  * Sample Call (or Use): include 'connection.php';
- * Inputs (or Imports): one function takes the connection to the database as a input. 
+ * Inputs (or Imports): one function takes the connection to the database as an input. 
  * Outputs (or Exports): one function returns the database connection.
  * Subroutines Used (or Defined): OpenCoun(), CloseCone($conn)
  * Author: Paul-Hugo Dlugy-Hegwer
