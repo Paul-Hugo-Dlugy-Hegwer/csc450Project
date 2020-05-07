@@ -5,7 +5,7 @@
  * Purpose: The page responsible for signing up users or organizations for an account.
  * Sample Call (or Use): include 'connection.php';
  * Inputs (or Imports): Takes information from user to create a username and password for the account. 
- * Outputs (or Exports): When the creation is successful, the username, password, email, phone, address are entered into the database.
+ * Outputs (or Exports): When the creation is successful, the username, password, email, phone, and address are entered into the database.
  * Subroutines Used (or Defined): session_start, OpenCon(), mysqli
  *--------------------SQL Queries
  *--------------------INSERT INTO user(username, password, email, phone, address) VALUES ('$un_var', '$pw_var', '$e_var', '$pn_var', '$ad_var');
