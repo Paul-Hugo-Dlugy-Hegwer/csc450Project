@@ -8,7 +8,7 @@
  * Author: Paul-Hugo Dlugy-Hegwer
  * Date: Unknown
  * Modifications (when & what): Modifications made on 05/06/2020.
- * Justification: After losing access to survey monkey we had to create our own. 
+ * Justification: After losing access to SurveyMonkey we had to create our own. 
  * */
 ?>
 
