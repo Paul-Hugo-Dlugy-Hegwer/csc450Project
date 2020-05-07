@@ -1,4 +1,18 @@
 <?php
+/*
+ * Title: viewOps.php
+ * Purpose: This page shows the user their matchs.
+ * ------- However, matches are being manually entered right now.
+ * Inputs (or Imports): Takes input from the session to be used by sql.
+ * -------------------  Retrieves data from the database regarding user matches.
+ * Outputs (or Exports): Sends an opportunity id to oDetails when view is clicked.
+ * Subroutines Used (or Defined): session_start(), conncection.php functions, mysqli calls
+ * Author: Paul-Hugo Dlugy-Hegwer
+ * Date: 05/06/2020
+ * Modifications (when & what): None
+ * Justification: None
+ * */
+
 session_start();
 include 'connection.php';
 $conn = OpenCon();
@@ -72,8 +86,10 @@ echo $_SESSION['uId'];
   </div>
   <div class="col-sm-8 text-left">
     <h1>Your Matches</h1>
-    <?php
+<?php
+      //Session varaible is retrieved.
       $u_var = (int)$_SESSION['uId'];
+      //Retrieves user data regarding matches with opportunities
       $sql = "SELECT * FROM match_u WHERE match_u.user_ID = '$u_var';";
       $results = mysqli_query($conn, $sql);
       echo "<table border='1'>
@@ -83,6 +99,7 @@ echo $_SESSION['uId'];
 	<th> Details </th>
 	</tr>";
       $result_check = mysqli_num_rows($results);
+      //Fills in a table with the data.
       while($row = mysqli_fetch_assoc($results)){
       	echo "<tr>";
 	echo "<td>" .$row['opp_ID'] . "</td>";
@@ -91,7 +108,7 @@ echo $_SESSION['uId'];
 	echo "</tr>";
       } 
       echo "</table>";
-      mysqli_close($con);
+      mysqli_close($conn);
 ?>
 
   </div>
