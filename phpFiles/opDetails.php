@@ -3,7 +3,7 @@ session_start();
 include 'connection.php';
 $conn = OpenCon();
 echo $_SESSION['uId'];
-$oppIDVar = $_GET['oppIDVar'];
+$oppIDVar = (int)$_GET['oppIDVar'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
