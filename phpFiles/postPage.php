@@ -4,10 +4,10 @@
  * Title: postPage.php
  * Purpose: This page is essentially the form for organizations to setup opportunities
  * -------  However, this page is no longer in active use due to complications.
- * -------  SurveyMonkey wont let us easily extract the data onto a server automatically.
+ * -------  SurveyMonkey will not let us easily extract the data onto a server automatically.
  * Inputs (or Imports): Takes user input into a survey
- * Outputs (or Exports): Exports entry data to survey monkey.
- * Subroutines Used (or Defined): Uses a survey monkey survey.
+ * Outputs (or Exports): Exports entry data to SurveyMonkey.
+ * Subroutines Used (or Defined): Uses a SurveyMonkey survey.
  * Author: Paul-Hugo Dlugy-Hegwer
  * Date: 05/06/2020
  * Modifications (when & what): None
