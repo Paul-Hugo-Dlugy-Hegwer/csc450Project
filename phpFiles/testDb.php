@@ -30,3 +30,4 @@ if($result_check > 0){
 }
 $sql = "INSERT INTO organization(username, password, email, phone, address) VALUES ('satan', 'beezle', 'lucifer@fallenAngel.com', '666.666.666', 'hell')";
 $results = mysqli_query($conn, $sql);
+?>
