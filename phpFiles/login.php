@@ -2,7 +2,7 @@
 <?php
 /*
  * Title: login.php
- * Purpose: The page responsible for handling the login of users as either as organizations
+ * Purpose: The page responsible for handling the login of users as either organizations
  * -------- or volunteers.
  * Inputs (or Imports): Takes input from the user. The user enters a username and a password,
  * -------------------- and selects between loging in as a user or an organization. 
@@ -30,7 +30,7 @@
 		echo "HERE I AM";
 		header('Location: signUp.php');
 	}
-	//Check if user has hit submit button for login.
+	//Checks if user has hit submit button for login.
 	if(isset($_POST['submit'])){
 		//Basic validation to ensure neither username or passwors is empty.
 		if($_POST['un'] != "" && $_POST['pw']!= "")
@@ -39,11 +39,11 @@
 			$count_pw = strlen($_POST['pw']);
 			$un_sub = $_POST['un'];
 			$pw_sub = $_POST['pw'];
-			//Store information in session to be used on startupPage.php
+			//Store information in session to be used on startupPage.php.
 			$_SESSION['check']=$_POST['submit'];
 			$_SESSION['loginType']=$_POST['loginType'];
 			if ($count_un > '3' && $count_pw > '3'){
-				//Login as volunteer
+				//Login as volunteer.
 				if($_POST['loginType'] == 'user'){
 					if(isset($_POST["submit"])){
                                         	$sql = "SELECT user_ID FROM user WHERE username = '$un_sub' AND password = '$pw_sub';";
