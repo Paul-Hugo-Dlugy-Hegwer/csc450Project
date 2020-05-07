@@ -81,7 +81,7 @@ echo $_SESSION['orgId'];
       <?php if ($_SESSION['check']  == 'Submit' && $_SESSION['loginType']=='user') : ?>
       <button type="button" onclick="window.location.href='newSurveyPage.php'">Take Survey</button>
       
-      <button type="button" onclick="alert('VO')">View opportinities</button>
+      <button type="button" onclick="window.location.href='viewOps.php'">View opportinities</button>
       <?php endif ?>
       <?php if ($_SESSION['loginType']=='org') : ?>
 	<button type="button" onclick="window.location.href='newPostPage.php'">Post Opportunity</button>
