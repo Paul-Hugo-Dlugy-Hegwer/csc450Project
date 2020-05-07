@@ -1,7 +1,7 @@
 <?php
 /*
  * Title: opDetails.php
- * Purpose: This page is retreives data about a specific opportunity based on the id passed.
+ * Purpose: This page retrieves data about a specific opportunity based on the id passed.
  * Inputs (or Imports): Takes in input from viewOps.php, and from the database.
  * Outputs (or Exports): None
  * Subroutines Used (or Defined): session_start(), conncection.php functions, mysqli calls
