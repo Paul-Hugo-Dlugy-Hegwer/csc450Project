@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<?php  
 /*
  * Title: signUp.php
  * Purpose: The page responsible for signing up users or organizations for an account.
@@ -13,8 +15,6 @@
  * Modifications (when & what): Modifications made on 05/07/2020.
  * */
 
-<!DOCTYPE html>
-<?php
 session_start();
 include 'connection.php';
 $conn=OpenCon();
