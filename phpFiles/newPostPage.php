@@ -1,7 +1,20 @@
 <!DOCTYPE html>
 <?php
-include 'connection.php';
-$conn = OpenCon();
+/*
+ * Title: logout.php
+ * Purpose: The page responsible for handling the loogging out anc clearing the session.
+ * Inputs (or Imports): None
+ * Outputs (or Exports): None
+ * Subroutines Used (or Defined): session_start(), unset(x), session_destroy
+ * Author: Paul-Hugo Dlugy-Hegwer
+ * Date: 05/07/2020
+ * Modifications (when & what): None
+ * Justification: None
+ * */
+
+
+	include 'connection.php';
+	$conn = OpenCon();
 session_start();
 echo $_SESSION['orgId'];
 ?>
@@ -77,6 +90,9 @@ if(isset($_POST['submit']))
         <li class="active"><a href="#">Home</a></li>
         <li><a href="#">About</a></li>
         <li><a href="#">Contact</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+	<li><a href="logout.php"> Logout</a></li>
       </ul>
     </div>
   </div>

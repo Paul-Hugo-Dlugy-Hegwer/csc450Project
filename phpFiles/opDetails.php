@@ -61,6 +61,9 @@ echo $oppIDVar;
       <li><a href="#">About</a></li>
       <li><a href="#">Contact</a></li>
     </ul>
+      <ul class="nav navbar-nav navbar-right">
+      <li><a href="logout.php"> Logout</a></li>
+    </ul>
   </div>
 </div>
 </nav>
