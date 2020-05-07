@@ -1,49 +1,25 @@
 <!DOCTYPE html>
-<?php
-/*
- * Title: login.php
- * Purpose: The page responsible for handling the login of users as either as organizations
- * -------- or volunteers.
- * Inputs (or Imports): Takes input from the user. The user enters a username and a password,
- * -------------------- and selects between loging in as a user or an organization. 
- * Outputs (or Exports): When login is succesful the user_ID and org_ID from the database are
- * --------------------- in the session.
- * Subroutines Used (or Defined):session_start, OpenCon(), mysqli 
- * -----------------------------SQL Queries
- * -----------------------------SELECT user_ID FROM user WHERE username = '$un_sub' AND password = '$pw_sub';
- * -----------------------------SELECT org_ID FROM organization WHERE username = '$un_sub' AND password = '$pw_sub';
- * Author: Paul-Hugo Dlugy-Hegwer
- * Date: Unknown
- * Modifications (when & what): Modifications made on 05/06/2020.
- * Justification: Moved user_ID and org_ID into session.
- * */
-
-//Activation of session
-	session_start();
-	include 'connection.php';
-	$conn = OpenCon();
-	echo "Succesful Connection";
+<?php 
+session_start();
+include 'connection.php';
+$conn = OpenCon();
+echo "Succesful Connection";
 ?>
 <?php
-	//Checks to see if user has opted to signup rather than login.
-	if(isset($_POST['signup'])){
-		echo "HERE I AM";
+if(isset($_POST['signup'])){
+	echo "HERE I AM";
 		header('Location: signUp.php');
 	}
-	//Check if user has hit submit button for login.
 	if(isset($_POST['submit'])){
-		//Basic validation to ensure neither username or passwors is empty.
 		if($_POST['un'] != "" && $_POST['pw']!= "")
 		{
 			$count_un = strlen($_POST['un']);
 			$count_pw = strlen($_POST['pw']);
 			$un_sub = $_POST['un'];
 			$pw_sub = $_POST['pw'];
-			//Store information in session to be used on startupPage.php
 			$_SESSION['check']=$_POST['submit'];
 			$_SESSION['loginType']=$_POST['loginType'];
 			if ($count_un > '3' && $count_pw > '3'){
-				//Login as volunteer
 				if($_POST['loginType'] == 'user'){
 					if(isset($_POST["submit"])){
                                         	$sql = "SELECT user_ID FROM user WHERE username = '$un_sub' AND password = '$pw_sub';";
@@ -57,9 +33,7 @@
                                         	}	
 
                                 	}
-				}
-				//Login as a organization.
-			       	elseif($_POST['loginType'] == 'org') {
+				} elseif($_POST['loginType'] == 'org') {
 					if(isset($_POST["submit"])){
                                                 $sql = "SELECT org_ID FROM organization WHERE username = '$un_sub' AND password = '$pw_sub';";
                                                 $results = mysqli_query($conn, $sql);
@@ -148,9 +122,6 @@
     <div class="col-sm-8 text-left">
       <h1>Welcome</h1>
       <hr>
-      <?php
-	//login in for below.
-      ?>
       <form method="POST" action="login.php">
               <h2>username: </h2>
               <input name = "un"/>
