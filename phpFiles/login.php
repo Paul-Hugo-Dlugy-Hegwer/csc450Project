@@ -1,23 +1,52 @@
 <!DOCTYPE html>
 <?php 
 session_start();
+include 'connection.php';
+$conn = OpenCon();
+echo "Succesful Connection";
 ?>
 <?php
+if(isset($_POST['signup'])){
+	echo "HERE I AM";
+		header('Location: signUp.php');
+	}
 	if(isset($_POST['submit'])){
-		echo "HERE";
-
 		if($_POST['un'] != "" && $_POST['pw']!= "")
 		{
-			echo "HERE AS WELL";
 			$count_un = strlen($_POST['un']);
 			$count_pw = strlen($_POST['pw']);
+			$un_sub = $_POST['un'];
+			$pw_sub = $_POST['pw'];
 			$_SESSION['check']=$_POST['submit'];
 			$_SESSION['loginType']=$_POST['loginType'];
 			if ($count_un > '3' && $count_pw > '3'){
-				echo "HERE ASLO";
-				if(isset($_POST["submit"])){
-                                	header('Location: startupPage.php');
-                        	}  
+				if($_POST['loginType'] == 'user'){
+					if(isset($_POST["submit"])){
+                                        	$sql = "SELECT user_ID FROM user WHERE username = '$un_sub' AND password = '$pw_sub';";
+                                        	$results = mysqli_query($conn, $sql);
+                                        	$result_check = mysqli_num_rows($results);
+                                        	if($result_check > 0){
+                                                	while ($row=mysqli_fetch_assoc($results)){
+                                                        	echo $row['user_ID'];
+                                                        	header('Location: startupPage.php');
+                                                	}
+                                        	}	
+
+                                	}
+				} elseif($_POST['loginType'] == 'org') {
+					if(isset($_POST["submit"])){
+                                                $sql = "SELECT org_ID FROM organization WHERE username = '$un_sub' AND password = '$pw_sub';";
+                                                $results = mysqli_query($conn, $sql);
+                                                $result_check = mysqli_num_rows($results);
+                                                if($result_check > 0){
+                                                        while ($row=mysqli_fetch_assoc($results)){
+                                                                echo $row['org_ID'];
+                                                                header('Location: startupPage.php');
+                                                        }
+                                                }
+
+                                        }
+				}else{}	
 			}
 		}
 	}	
@@ -105,6 +134,8 @@ session_start();
 	      <input type="Radio" name="loginType" value="org"/>
 	      <P>
 	      <input type="submit" name="submit" value="Submit"/>
+	      <P>
+              <input type="submit" name="signup" value="Sign up"/>
       </form>
       <p>
       </p>

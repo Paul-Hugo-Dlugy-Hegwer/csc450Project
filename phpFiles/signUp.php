@@ -1,6 +1,54 @@
 <!DOCTYPE html>
 <?php
 session_start();
+include 'connection.php';
+$conn=OpenCon();
+echo "Connected";
+?>
+<?php
+  $un_var=$_POST['un'];
+  $pw_var=$_POST['pw'];
+  $e_var=$_POST['email'];
+  $ad_var=$_POST['adrs'];
+  $pn_var=$_POST['pn'];
+  $loginType=$_POST['loginType'];
+  if(isset($_POST['Signup']))
+  {
+    echo $un_var;
+    if($un_var != "" && $pw_var != "" &&  $e_var != "" && $ad_var != "" && $pn_var != "")
+    {
+      echo " HERE I AM AS WELL";
+      $count_un = strlen($un_var);
+      $count_pw = strlen($pw_var);
+      $count_e = strlen($e_var);
+      $count_ad = strlen($ad_var);
+      $count_pn = strlen($pn_var);
+      echo $_POST['loginType'];
+      if($count_un > 3 && $count_pw > 3 && $count_e > 9 && $count_ad > 5 && $count_pn == 11)
+      {
+        if($_POST['loginType']=='user')
+        {
+          if(isset($_POST['Signup']))
+          {
+              $sql = "INSERT INTO user(username, password, email, phone, address) VALUES ('$un_var', '$pw_var', '$e_var', '$pn_var', '$ad_var');";
+              $results = mysqli_query($conn, $sql);
+              echo "ACCOUNT CREATED";
+              header('Location: login.php');
+          }
+        }
+        elseif($_POST['loginType']=='org') {
+          if(isset($_POST['Signup']))
+	  {
+	      echo "BATMAAAAN";
+              $sql = "INSERT INTO organization(username, password, email, phone, address) VALUES ('$un_var', '$pw_var', '$e_var', '$pn_var', '$ad_var');";
+              $results = mysqli_query($conn, $sql);
+              echo "ACCOUNT CREATED";
+              header('Location: login.php');
+          }
+        }
+      }
+    }
+  }
 ?>
 <html lang="en">
 <head>
@@ -81,7 +129,7 @@ session_start();
         <input type="Radio" name="loginType" value="user"/>
         <P>
         <?PHP print "find volunteers"; ?>
-        <input type="Radio" name="loginType" value "org"/>
+        <input type="Radio" name="loginType" value="org"/>
         <P>
         <h3>username </h3>
         <input name = "un"/>
