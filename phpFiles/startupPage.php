@@ -2,7 +2,7 @@
 <?php
 /*
  * Title: startUp.php
- * Purpose: This is page is defunct.
+ * Purpose: This is the page that you see when you first open the webApp. 
  * Inputs (or Imports): None.
  * Outputs (or Exports): None.
  * Subroutines Used (or Defined): session_start.
