@@ -3,6 +3,7 @@ session_start();
 include 'connection.php';
 $conn = OpenCon();
 echo $_SESSION['uId'];
+$oppIDVar = $_GET['oppIDVar'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -71,25 +72,40 @@ echo $_SESSION['uId'];
     <h1>Your Matches</h1>
     <?php
       $u_var = (int)$_SESSION['uId'];
-      $sql = "SELECT * FROM match_u WHERE match_u.user_ID = '$u_var';";
+      $sql = "SELECT * FROM opportunity WHERE opportunity.user_ID = '$oppIDVar';";
       $results = mysqli_query($conn, $sql);
       echo "<table border='1'>
-	<tr>
-	<th> Opportunity ID </th>
-	<th> user ID </th>
-	<th> Details </th>
-	</tr>";
+	    <tr>
+	    <th> Opportunity ID </th>
+	    <th> Name</th>
+	    <th> Description</th>
+      <th> Physical Activity </th>
+      <th> Social Activity </th>
+      <th> Tech Ability Needed </th>
+      <th> City </th>
+      <th> State </th>
+      <th> Day </th>
+      <th> Time of Day <th>
+	    </tr>";
       $result_check = mysqli_num_rows($results);
       while($row = mysqli_fetch_assoc($results)){
-      	echo "<tr>";
-	echo "<td>" .$row['opp_ID'] . "</td>";
-	echo "<td>" .$row['user_ID'] . "</td>";
-	echo "<td>"."<a href='opDetails.php?oppIDVar=<?=$row['opp_ID']?>'>View</a>" . "</td>";
-	echo "</tr>";
-      } 
+        echo "<tr>";
+	      echo "<td>" .$row['opp_ID'] . "</td>";
+	      echo "<td>" .$row['name'] . "</td>";
+        echo "<td>" .$row['description']. "</td>";
+        echo "<td>" .$row['lift_ability']. "</td>";
+        echo "<td>" .$row['tech_ability']. "</td>";
+        echo "<td>" .$row['comm_ability']. "</td>";
+        echo "<td>" .$row['spots_availabe']. "</td>";
+        echo "<td>" .$row['City'] . "</td>";
+        echo "<td>" .$row['State'] . "</td>";
+        echo "<td>" .$row['Day'] . "</td>";
+        echo "<td>" .$row['opTime'] . "</td>";
+	      echo "</tr>";
+      }
       echo "</table>";
       mysqli_close($con);
-?>
+      ?>
 
   </div>
   <div class="col-sm-2 sidenav">
@@ -101,3 +117,4 @@ echo $_SESSION['uId'];
 </footer>
 </body>
 </html>
+
