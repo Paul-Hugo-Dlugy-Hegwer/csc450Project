@@ -1,6 +1,8 @@
+<!DOCTYPE html>
+<?php
 /*
  * Title: startUp.php
- * Purpose: This is the page that you see when you first open the webApp. 
+ * Purpose: This is page is defunct.
  * Inputs (or Imports): None.
  * Outputs (or Exports): None.
  * Subroutines Used (or Defined): session_start.
@@ -9,8 +11,6 @@
  * Modifications (when & what): Modifications made on 04/24/2020
  * */
 
-<!DOCTYPE html>
-<?php
 session_start();
 echo $_SESSION['uId'];
 ?>
