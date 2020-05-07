@@ -1,11 +1,11 @@
 <?php
 /*
  * Title: viewOps.php
- * Purpose: This page shows the user their matchs.
+ * Purpose: This page shows the user their matches.
  * ------- However, matches are being manually entered right now.
  * Inputs (or Imports): Takes input from the session to be used by sql.
  * -------------------  Retrieves data from the database regarding user matches.
- * Outputs (or Exports): Sends an opportunity id to oDetails when view is clicked.
+ * Outputs (or Exports): Sends an opportunity id to Details when view is clicked.
  * Subroutines Used (or Defined): session_start(), conncection.php functions, mysqli calls
  * Author: Paul-Hugo Dlugy-Hegwer
  * Date: 05/06/2020
