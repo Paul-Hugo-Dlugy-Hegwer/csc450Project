@@ -1,13 +1,28 @@
 <!DOCTYPE html>
 <?php
+/*
+ * Title: newSurveyPage.php
+ * Purpose: This page is essentially the survey form a volunteer must sign to start matching.
+ * Inputs (or Imports): Takes user input for first name, last name, activity information, location info
+ * -------------------- and times available, etc.
+ * Outputs (or Exports): Exports user data to my sql.
+ * Subroutines Used (or Defined): session_start(), conncection.php functions, mysqli calls
+ * Author: Paul-Hugo Dlugy-Hegwer
+ * Date: 05/06/2020
+ * Modifications (when & what): None
+ * Justification: None
+ * */
+
 include 'connection.php';
 $conn = OpenCon();
 session_start();
 echo $_SESSION['uId'];
 ?>
 <?php
+//When user hits submit on html form.
 if(isset($_POST['submit']))
 {
+	//Basic validation to ensure names are not empty...not enough.
 	if($_POST['fName'] != "" && $_POST['lName'] != "")
 	{
 		$fname = $_POST['fName'];
@@ -21,6 +36,7 @@ if(isset($_POST['submit']))
 		$day = $_POST['day'];
 		$eT = (int)$_POST['earlyTime'];
 		$lT = (int)$_POST['earlyTime'];
+		//gets the user ID from session to fill out survey.
 		$un_var = (int)$_SESSION['uId'];
 		$sql = "INSERT INTO survey(user_ID, first_name, last_name, lift_ability, tech_ability, comm_ability, City, State, Day, idealStart, latestEnd) VALUES ('$un_var', '$fname', '$lname', '$pAC', '$tAC', '$sAC', '$city', '$state', '$day', '$eT', '$lT');";
 		$results = mysqli_query($conn, $sql);

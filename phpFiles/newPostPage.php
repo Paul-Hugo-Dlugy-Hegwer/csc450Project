@@ -1,24 +1,27 @@
 <!DOCTYPE html>
 <?php
 /*
- * Title: logout.php
- * Purpose: The page responsible for handling the loogging out anc clearing the session.
- * Inputs (or Imports): None
- * Outputs (or Exports): None
- * Subroutines Used (or Defined): session_start(), unset(x), session_destroy
+ * Title: newPostPage.php
+ * Purpose: This page is essentially the form for organiations to setup opportunities.
+ * Inputs (or Imports): Takes user input for the name, description, activity reuirements.
+ * -------------------- and location.
+ * Outputs (or Exports): Exports user data to my sql.
+ * Subroutines Used (or Defined): session_start(), conncection.php functions, mysqli calls
  * Author: Paul-Hugo Dlugy-Hegwer
- * Date: 05/07/2020
+ * Date: 05/06/2020
  * Modifications (when & what): None
  * Justification: None
  * */
 
 
-	include 'connection.php';
-	$conn = OpenCon();
+include 'connection.php';
+$conn = OpenCon();
 session_start();
 echo $_SESSION['orgId'];
 ?>
+
 <?php
+//Handles submition of form, NO VALIDATION fixe late.
 if(isset($_POST['submit']))
 {
 	$name = $_POST['opName'];
@@ -30,6 +33,7 @@ if(isset($_POST['submit']))
 	$city = $_POST['city'];
 	$state = $_POST['state'];
 	$time = (float)$_POST['time'];
+	//The organization ID required for the post.
 	$or_val = (int)$_SESSION['orgId'];
 	$sql = "  INSERT INTO opportunity(org_ID, name, description, lift_ability, tech_ability, comm_ability, spots_availabe, City, State, Day, opTime) VALUES ('$or_val', '$name', '$des', '$pAC', '$tSk', '$sAC', 10, '$city', '$state', '$day', '$time');";
 	$results = mysqli_query($conn, $sql);

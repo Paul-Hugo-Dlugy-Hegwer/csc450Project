@@ -1,10 +1,23 @@
 <?php
+/*
+ * Title: opDetails.php
+ * Purpose: This page is retreives data about a specific opportunity based on the id passed.
+ * Inputs (or Imports): Takes in input from viewOps.php, and from the database.
+ * Outputs (or Exports): None
+ * Subroutines Used (or Defined): session_start(), conncection.php functions, mysqli calls
+ * Author: Paul-Hugo Dlugy-Hegwer
+ * Date: 05/06/2020
+ * Modifications (when & what): None
+ * Justification: None
+ * */
+
 session_start();
 include 'connection.php';
 $conn = OpenCon();
 $oppIDVar = (int)$_GET['oppIDVar'];
 echo $oppIDVar;
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -75,26 +88,29 @@ echo $oppIDVar;
     <h1>Opportunity Details</h1>
     <?php
       $u_var = (int)$_SESSION['uId'];
+      //Gets the data associated with the passed ID number.
       $sql = "SELECT * FROM opportunity WHERE opportunity.opp_ID = '$oppIDVar';";
       $results = mysqli_query($conn, $sql);
+      //Creates a html table.
       echo "<table border='1'>
-	    <tr>
-	    <th> Opportunity ID </th>
-	    <th> Name</th>
-	    <th> Description</th>
-      <th> Physical Activity </th>
-      <th> Social Activity </th>
-      <th> Tech Ability Needed </th>
-      <th> City </th>
-      <th> State </th>
-      <th> Day </th>
-      <th> Time of Day <th>
-	    </tr>";
+	<tr>
+      	<th> Opportunity ID </th>
+      	<th> Name</th>
+      	<th> Description</th>
+      	<th> Physical Activity </th>
+      	<th> Social Activity </th>
+      	<th> Tech Ability Needed </th>
+      	<th> City </th>
+      	<th> State </th>
+      	<th> Day </th>
+      	<th> Time of Day <th>
+	</tr>";
       $result_check = mysqli_num_rows($results);
+      //Gets each row of data and palces the in the table..
       while($row = mysqli_fetch_assoc($results)){
         echo "<tr>";
-	      echo "<td>" .$row['opp_ID'] . "</td>";
-	      echo "<td>" .$row['name'] . "</td>";
+	echo "<td>" .$row['opp_ID'] . "</td>";
+	echo "<td>" .$row['name'] . "</td>";
         echo "<td>" .$row['description']. "</td>";
         echo "<td>" .$row['lift_ability']. "</td>";
         echo "<td>" .$row['tech_ability']. "</td>";
@@ -104,9 +120,10 @@ echo $oppIDVar;
         echo "<td>" .$row['State'] . "</td>";
         echo "<td>" .$row['Day'] . "</td>";
         echo "<td>" .$row['opTime'] . "</td>";
-	      echo "</tr>";
+	echo "</tr>";
       }
       echo "</table>";
+      //close connection
       mysqli_close($con);
       ?>
 
