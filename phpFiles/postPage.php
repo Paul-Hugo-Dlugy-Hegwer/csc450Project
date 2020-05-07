@@ -2,7 +2,7 @@
 <?php
 /*
  * Title: postPage.php
- * Purpose: This page is essentially the form for organiations to setup opportunities
+ * Purpose: This page is essentially the form for organizations to setup opportunities
  * -------  However, this page is no longer in active use due to complications.
  * -------  SurveyMonkey wont let us easily extract the data onto a server automatically.
  * Inputs (or Imports): Takes user input into a survey
