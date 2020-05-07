@@ -3,7 +3,7 @@
 /*
  * Title: newPostPage.php
  * Purpose: This page is essentially the form for organiations to setup opportunities.
- * Inputs (or Imports): Takes user input for the name, description, activity reuirements.
+ * Inputs (or Imports): Takes user input for the name, description, activity requirements.
  * -------------------- and location.
  * Outputs (or Exports): Exports user data to my sql.
  * Subroutines Used (or Defined): session_start(), conncection.php functions, mysqli calls
