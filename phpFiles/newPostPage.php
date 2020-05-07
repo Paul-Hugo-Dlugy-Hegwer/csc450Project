@@ -2,7 +2,6 @@
 <?php
 /*
  * Title: newPostPage.php
-<<<<<<< HEAD
  * Purpose: This page is essentially the form for organiations to setup opportunities.
  * Inputs (or Imports): Takes user input for the name, description, activity reuirements.
  * -------------------- and location.
@@ -11,18 +10,6 @@
  * Author: Paul-Hugo Dlugy-Hegwer
  * Date: 05/06/2020
  * Modifications (when & what): None
-=======
- * Purpose: The page responsible for allowing organizations to post new volunteer opportunities.
- * Inputs (or Imports): Takes input from the organization and allows them to create a volunteer opportunity with details. 
- * Outputs (or Exports): Displays a new opportunity for the user to be able to match with. 
- * Subroutines Used (or Defined): session_start(), isset(x), OpenCon(), mysqli
-  * -----------------------------SQL Queries
-   * ----------------------------- INSERT INTO opportunity(org_ID, name, description, lift_ability, tech_ability, comm_ability, spots_availabe, City, State, Day, opTime) VALUES ('$or_val', '$name', '$des', '$pAC', '$tSk', '$sAC', 10, '$city', '$state', '$day', '$time');
- * Author: Paul-Hugo Dlugy-Hegwer
- * Date: 05/07/2020
- * Modifications (when & what): Modifications made on 05/06/2020
->>>>>>> 7e28f7db0d8a128e1c8e3dd17444d1f3c55ee506
- * Justification: None
  * */
 
 
