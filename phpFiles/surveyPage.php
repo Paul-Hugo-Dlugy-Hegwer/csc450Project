@@ -1,3 +1,16 @@
+/*
+ * Title: surveyPage.php
+ * Purpose:This page is just the setup for the survey
+ * Inputs (or Imports): None
+ * Outputs (or Exports): None
+ * Subroutines Used (or Defined):
+ * Author: Paul-Hugo Dlugy-Hegwer
+ * Date: Unknown
+ * Modifications (when & what): Modifications made on 05/06/2020.
+ * Justification: After losing access to survey monkey we had to create our own. 
+ * */
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

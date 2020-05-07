@@ -1,3 +1,14 @@
+/*
+ * Title: startUp.php
+ * Purpose: This is the page that you see when you first open the webApp. 
+ * Inputs (or Imports): None.
+ * Outputs (or Exports): None.
+ * Subroutines Used (or Defined): session_start.
+ * Author: Paul-Hugo Dlugy-Hegwer
+ * Date: Unknown
+ * Modifications (when & what): Modifications made on 04/24/2020
+ * */
+
 <!DOCTYPE html>
 <?php
 session_start();
