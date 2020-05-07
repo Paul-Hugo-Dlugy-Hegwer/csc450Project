@@ -84,7 +84,7 @@ echo $_SESSION['uId'];
       	echo "<tr>";
 	echo "<td>" .$row['opp_ID'] . "</td>";
 	echo "<td>" .$row['user_ID'] . "</td>";
-	echo "<td>"."<a href='opDetails.php'>View</a>" . "</td>";
+	echo "<td>"."<a href='opDetails.php?varname=".$row['opp_ID']."'>View</a>" . "</td>";
 	echo "</tr>";
       } 
       echo "</table>";
