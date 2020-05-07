@@ -1,7 +1,7 @@
 <?php
 /*
  * Title: logout.php
- * Purpose: The page responsible for handling the loogging out anc clearing the session.
+ * Purpose: The page responsible for handling the logging out and clearing the session.
  * Inputs (or Imports): None 
  * Outputs (or Exports): None
  * Subroutines Used (or Defined): session_start(), unset(x), session_destroy
