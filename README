@@ -1,2 +1,5 @@
 This is the csc450Project by developed by Paul-Hugo Dlugy-Hegwer, Meredith Metcalf, Krista Page, Lara Johnson, and James Dupree
-The css template came from w3School.
+
+The css template came from w3School. https://www.w3schools.com/bootstrap/bootstrap_templates.asp.
+
+To build and run, make sure to fill in the username and password for satoshi and mysql in connection.php.
