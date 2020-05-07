@@ -1,4 +1,35 @@
 <!DOCTYPE html>
+<?php
+include 'connection.php';
+$conn = OpenCon();
+session_start();
+echo $_SESSION['uId'];
+?>
+<?php
+if(isset($_POST['submit']))
+{
+	if($_POST['fName'] != "" && $_POST['lName'] != "")
+	{
+		$fname = $_POST['fName'];
+		$lname = $_POST['lName'];
+		$pAC = (int)$_POST['phyAc'];
+		$tAC = (int)$_POST['techSkls'];
+		$sAC = (int)$_POST['socAc'];
+		$zipCode = $_POST['zipcode'];
+		$city = $_POST['city'];
+		$state = $_POST['state'];
+		$day = $_POST['day'];
+		$eT = (int)$_POST['earlyTime'];
+		$lT = (int)$_POST['earlyTime'];
+		$un_var = (int)$_SESSION['uId'];
+		$sql = "INSERT INTO survey(user_ID, first_name, last_name, lift_ability, tech_ability, comm_ability, City, State, Day, idealStart, latestEnd) VALUES ('$un_var', '$fname', '$lname', '$pAC', '$tAC', '$sAC', '$city', '$state', '$day', '$eT', '$lT');";
+		$results = mysqli_query($conn, $sql);
+                echo "SURVEY DONE";
+                header('Location: startupPage.php');
+		
+	}
+}
+?>
 <html lang="en">
 <head>
   <title>VolunteerOps</title>
@@ -63,7 +94,7 @@
     </div>
     <div class="col-sm-8 text-left">
       <h1>Take the survey! Find volunteering opportunities near you!</h1>
-      <form method="POST" action="login.php">
+      <form method="POST" action="newSurveyPage.php">
               <h3>First name</h3>
               <input name = "fName"/>
               <h3>Last name</h3>
@@ -78,7 +109,7 @@
                True <input type="Radio" name="socAc" value="1"/>
 	       False <input type="Radio" name="socAc" value="0"/>
               <h3>zipCode</h3>
-              <input name = "zipCode"/>
+              <input name = "zipcode"/>
               <h3>City</h3>
               <input name = "city"/>
               <h3>State</h3>

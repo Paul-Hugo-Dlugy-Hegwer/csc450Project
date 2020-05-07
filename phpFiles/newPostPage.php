@@ -1,4 +1,28 @@
 <!DOCTYPE html>
+<?php
+include 'connection.php';
+$conn = OpenCon();
+session_start();
+echo $_SESSION['orgId'];
+?>
+<?php
+if(isset($_POST['submit']))
+{
+	$name = $_POST['opName'];
+	$des = $_POST['descript'];
+	$pAC = $_POST['phyAc'];
+	$tSk = $_POST['techSkls'];
+	$sAC = $_POST['socAc'];
+	$zip = $_POST['zipCode'];
+	$city = $_POST['city'];
+	$state = $_POST['state'];
+	$time = (float)$_POST['time'];
+	$or_val = (int)$_SESSION['orgId'];
+	$sql = "  INSERT INTO opportunity(org_ID, name, description, lift_ability, tech_ability, comm_ability, spots_availabe, City, State, Day, opTime) VALUES ('$or_val', '$name', '$des', '$pAC', '$tSk', '$sAC', 10, '$city', '$state', '$day', '$time');";
+	$results = mysqli_query($conn, $sql);
+        header('Location: startupPage.php');
+}
+?>
 <html lang="en">
 <head>
   <title>VolunteerOps</title>
@@ -63,7 +87,7 @@
     </div>
     <div class="col-sm-8 text-left">
       <h1>To setup a volunteering opportunity, fill out the details form.</h1>
-      <form method="POST" action="login.php">
+      <form method="POST" action="newPostPage.php">
               <h2>Name of Opportunity </h2>
               <input name = "opName"/>
               <h3>description</h3>

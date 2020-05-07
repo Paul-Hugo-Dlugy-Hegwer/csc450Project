@@ -27,7 +27,7 @@ if(isset($_POST['signup'])){
                                         	$result_check = mysqli_num_rows($results);
                                         	if($result_check > 0){
                                                 	while ($row=mysqli_fetch_assoc($results)){
-                                                        	echo $row['user_ID'];
+                                                        	$_SESSION['uId'] = $row['user_ID'];
                                                         	header('Location: startupPage.php');
                                                 	}
                                         	}	
@@ -40,7 +40,7 @@ if(isset($_POST['signup'])){
                                                 $result_check = mysqli_num_rows($results);
                                                 if($result_check > 0){
                                                         while ($row=mysqli_fetch_assoc($results)){
-                                                                echo $row['org_ID'];
+                                                                $_SESSION['orgId'] = $row['org_ID'];
                                                                 header('Location: startupPage.php');
                                                         }
                                                 }

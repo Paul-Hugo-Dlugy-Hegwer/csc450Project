@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <?php
 session_start();
-echo $_SESSION['loginType'];
+echo $_SESSION['orgId'];
 ?>
 <html lang="en">
 <head>
